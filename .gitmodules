@@ -16,3 +16,12 @@
 [submodule "src/keyargs"]
 	path = src/keyargs
 	url = ../submodule-keyargs
+[submodule "src/pkg"]
+	path = src/pkg
+	url = ../submodule-pkg
+[submodule "src/table"]
+	path = src/table
+	url = ../submodule-table
+[submodule "src/tar"]
+	path = src/tar
+	url = ../submodule-tar

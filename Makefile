@@ -67,6 +67,22 @@ install-user:
 
 src/log/log.o: src/log/log.h
 src/log/test/log.test.o: src/log/log.h
+src/table/test/table-string-benchmark.test.o: src/table/table.h
+src/table/test/table-string-benchmark.test.o: src/table/table-string.h
+src/table/test/table-string-benchmark.test.o: src/keyargs/keyargs.h
+src/table/test/table-string-benchmark.test.o: src/log/log.h
+src/table/test/table-string-map.test.o: src/range/def.h src/window/def.h
+src/table/test/table-string-map.test.o: src/window/string.h
+src/table/test/table-string-map.test.o: src/keyargs/keyargs.h
+src/table/test/table-string-map.test.o: src/convert/def.h src/convert/fd.h
+src/table/test/table-string-map.test.o: src/convert/getline.h
+src/table/test/table-string-map.test.o: src/table/table.h
+src/table/test/table-string-map.test.o: src/table/table-string.h
+src/table/test/table-string-map.test.o: src/log/log.h
+src/table/table.o: ../range/def.h
+src/table/table-int.o: ../range/def.h src/table/table.h
+src/table/table-string.o: ../range/def.h src/table/table.h
+src/table/table.o: ../range/def.h src/table/table.h src/table/table-string.h
 src/window/printf.o: ../range/def.h src/window/def.h src/window/printf.h
 src/window/printf.o: src/window/alloc.h src/window/vprintf.h
 src/window/vprintf.o: ../range/def.h src/window/def.h
@@ -129,3 +145,49 @@ src/convert/def.o: ../range/def.h src/window/def.h
 src/convert/fd-bifurcated.o: src/window/def.h src/window/alloc.h
 src/convert/fd-bifurcated.o: src/window/def.h src/convert/fd-bifurcated.h
 src/convert/fd-bifurcated.o: src/log/log.h
+src/tar/read.o: src/window/string.h ../range/def.h src/window/def.h
+src/tar/read.o: src/window/alloc.h src/window/printf.h src/convert/def.h
+src/tar/read.o: ../keyargs/keyargs.h src/tar/common.h src/tar/read.h
+src/tar/read.o: src/log/log.h src/tar/internal/spec.h
+src/tar/write.o: src/window/string.h ../range/def.h src/window/def.h
+src/tar/write.o: src/window/alloc.h ../keyargs/keyargs.h src/convert/def.h
+src/tar/write.o: src/tar/common.h src/tar/write.h src/tar/internal/spec.h
+src/tar/write.o: src/log/log.h
+src/tar/test/tar-dump-posix-header.test.o: src/keyargs/keyargs.h
+src/tar/test/tar-dump-posix-header.test.o: src/range/def.h src/window/def.h
+src/tar/test/tar-dump-posix-header.test.o: src/convert/def.h src/convert/fd.h
+src/tar/test/tar-dump-posix-header.test.o: src/tar/internal/spec.h
+src/tar/test/tar-dump-posix-header.test.o: src/log/log.h
+src/tar/test/list-tar.test.o: src/range/def.h src/window/def.h
+src/tar/test/list-tar.test.o: src/window/alloc.h src/keyargs/keyargs.h
+src/tar/test/list-tar.test.o: src/convert/def.h src/convert/fd.h
+src/tar/test/list-tar.test.o: src/tar/internal/spec.h src/log/log.h
+src/tar/test/list-tar.test.o: src/tar/common.h src/tar/read.h
+src/tar/write.o: ../range/def.h src/window/def.h ../keyargs/keyargs.h
+src/tar/write.o: src/tar/common.h
+src/tar/read.o: ../keyargs/keyargs.h ../range/def.h src/window/def.h
+src/tar/read.o: src/convert/def.h src/tar/common.h
+src/pkg/install.util.o: ../keyargs/keyargs.h src/log/log.h
+src/pkg/root.o: src/window/string.h ../keyargs/keyargs.h src/pkg/root.h
+src/pkg/root.o: ../range/def.h src/window/def.h src/pkg/internal.h
+src/pkg/root.o: src/table/table.h src/table/table-string.h src/convert/def.h
+src/pkg/root.o: src/log/log.h
+src/pkg/install.o: ../range/def.h src/window/def.h src/convert/def.h
+src/pkg/install.o: ../keyargs/keyargs.h src/pkg/root.h
+src/pkg/internal.o: src/window/string.h ../keyargs/keyargs.h src/pkg/root.h
+src/pkg/internal.o: ../range/def.h src/window/def.h src/table/table.h
+src/pkg/internal.o: src/table/table-string.h
+src/pkg/pack.util.o: src/window/string.h ../keyargs/keyargs.h src/log/log.h
+src/pkg/update.o: ../keyargs/keyargs.h
+src/pkg/manifest.o: src/window/string.h ../keyargs/keyargs.h
+src/pkg/pack.o: src/window/string.h ../keyargs/keyargs.h ../range/def.h
+src/pkg/pack.o: src/window/def.h src/tar/common.h src/tar/write.h
+src/pkg/pack.o: src/log/log.h src/convert/def.h
+src/pkg/root.o: ../keyargs/keyargs.h
+src/pkg/install.o: src/window/string.h ../range/def.h src/window/def.h
+src/pkg/install.o: src/convert/def.h ../keyargs/keyargs.h src/pkg/root.h
+src/pkg/install.o: src/pkg/install.h ../range/string.h src/window/alloc.h
+src/pkg/install.o: src/window/string.h src/pkg/internal.h src/table/table.h
+src/pkg/install.o: src/table/table-string.h src/tar/common.h src/tar/read.h
+src/pkg/install.o: src/log/log.h src/convert/fd.h
+src/pkg/manifest.o: src/window/string.h ../keyargs/keyargs.h
