@@ -171,6 +171,26 @@ src/convert/test/getline.test.o: src/convert/getline.h src/log/log.h
 src/convert/fd-bifurcated.o: src/window/def.h src/window/alloc.h
 src/convert/fd-bifurcated.o: src/window/def.h src/convert/fd-bifurcated.h
 src/convert/fd-bifurcated.o: src/log/log.h
+src/http/client.o: ../range/def.h src/window/def.h ../keyargs/keyargs.h
+src/http/client.o: src/convert/source.h
+src/http/http-cat.util.o: ../range/def.h src/window/def.h src/window/alloc.h
+src/http/http-cat.util.o: ../keyargs/keyargs.h src/convert/source.h
+src/http/http-cat.util.o: src/convert/fd/source.h src/convert/sink.h
+src/http/http-cat.util.o: src/convert/duplex.h src/convert/fd/sink.h
+src/http/http-cat.util.o: src/http/client.h src/log/log.h
+src/http/client.o: src/window/string.h ../range/def.h ../range/string.h
+src/http/client.o: src/window/def.h src/window/alloc.h ../keyargs/keyargs.h
+src/http/client.o: src/convert/source.h src/convert/fd/source.h src/log/log.h
+src/http/client.o: src/network/network.h src/convert/getline.h
+src/network/network.o: ../keyargs/keyargs.h
+src/network/test/tcp/server.test.o: src/keyargs/keyargs.h src/range/def.h
+src/network/test/tcp/server.test.o: src/window/def.h src/window/alloc.h
+src/network/test/tcp/server.test.o: src/network/network.h
+src/network/test/tcp/server.test.o: src/convert/source.h src/convert/sink.h
+src/network/test/tcp/server.test.o: src/convert/fd/source.h
+src/network/test/tcp/server.test.o: src/convert/fd/sink.h src/log/log.h
+src/network/network.o: ../keyargs/keyargs.h ../range/def.h src/window/def.h
+src/network/network.o: src/log/log.h src/window/alloc.h src/network/network.h
 src/tar/read.o: src/window/string.h ../range/def.h src/window/def.h
 src/tar/read.o: src/window/alloc.h src/window/printf.h src/convert/source.h
 src/tar/read.o: ../keyargs/keyargs.h src/tar/common.h src/tar/read.h
@@ -196,19 +216,24 @@ src/tar/write.o: src/convert/source.h ../keyargs/keyargs.h src/tar/common.h
 src/tar/read.o: ../keyargs/keyargs.h ../range/def.h src/window/def.h
 src/tar/read.o: src/convert/source.h src/tar/common.h
 src/pkg/install.util.o: ../keyargs/keyargs.h ../range/def.h src/window/def.h
-src/pkg/install.util.o: src/window/alloc.h src/pkg/root.h src/pkg/install.h
-src/pkg/install.util.o: src/log/log.h
+src/pkg/install.util.o: src/window/alloc.h src/convert/source.h
+src/pkg/install.util.o: src/convert/fd/source.h src/pkg/root.h
+src/pkg/install.util.o: src/pkg/install.h src/log/log.h
 src/pkg/root.o: src/window/string.h ../keyargs/keyargs.h src/pkg/root.h
 src/pkg/root.o: ../range/def.h ../range/string.h src/window/def.h
 src/pkg/root.o: src/window/string.h src/window/alloc.h src/window/printf.h
+src/pkg/root.o: src/convert/source.h src/convert/fd/source.h
+src/pkg/root.o: src/convert/sink.h src/convert/fd/sink.h
 src/pkg/root.o: src/convert/getline.h src/immutable/immutable.h
 src/pkg/root.o: src/pkg/internal/def.h src/table/table.h
 src/pkg/root.o: src/table/table-string.h src/pkg/internal/mkdir.h
 src/pkg/root.o: src/log/log.h src/lang/error/error.h src/lang/tree/tree.h
 src/pkg/root.o: src/lang/tokenizer/tokenizer.h
-src/pkg/install.o: ../range/def.h src/window/def.h ../keyargs/keyargs.h
-src/pkg/install.o: src/pkg/root.h
-src/pkg/pack.util.o: src/window/string.h ../keyargs/keyargs.h src/log/log.h
+src/pkg/install.o: ../range/def.h src/window/def.h src/convert/source.h
+src/pkg/install.o: ../keyargs/keyargs.h src/pkg/root.h
+src/pkg/pack.util.o: src/window/string.h ../keyargs/keyargs.h ../range/def.h
+src/pkg/pack.util.o: src/convert/sink.h src/convert/fd/sink.h src/pkg/pack.h
+src/pkg/pack.util.o: src/log/log.h
 src/pkg/update.o: src/immutable/immutable.h ../keyargs/keyargs.h
 src/pkg/internal/mkdir.o: src/range/def.h
 src/pkg/internal/def.o: src/window/string.h src/keyargs/keyargs.h
@@ -229,12 +254,14 @@ src/pkg/pack.o: src/tar/common.h src/window/alloc.h src/tar/write.h
 src/pkg/pack.o: src/log/log.h src/pkg/pack.h
 src/pkg/root.o: ../keyargs/keyargs.h
 src/pkg/install.o: src/window/string.h ../range/def.h src/window/def.h
-src/pkg/install.o: src/window/path.h ../keyargs/keyargs.h src/pkg/root.h
-src/pkg/install.o: src/pkg/install.h ../range/string.h src/window/alloc.h
-src/pkg/install.o: src/window/string.h src/immutable/immutable.h
-src/pkg/install.o: src/pkg/internal/def.h src/table/table.h
-src/pkg/install.o: src/table/table-string.h src/pkg/internal/mkdir.h
-src/pkg/install.o: src/tar/common.h src/tar/read.h src/log/log.h
+src/pkg/install.o: src/window/path.h ../keyargs/keyargs.h
+src/pkg/install.o: src/convert/source.h src/convert/sink.h
+src/pkg/install.o: src/convert/fd/sink.h src/pkg/root.h src/pkg/install.h
+src/pkg/install.o: ../range/string.h src/window/alloc.h src/window/string.h
+src/pkg/install.o: src/immutable/immutable.h src/pkg/internal/def.h
+src/pkg/install.o: src/table/table.h src/table/table-string.h
+src/pkg/install.o: src/pkg/internal/mkdir.h src/tar/common.h src/tar/read.h
+src/pkg/install.o: src/log/log.h
 src/pkg/pack.o: ../keyargs/keyargs.h ../range/def.h src/window/def.h
 src/pkg/pack.o: src/convert/source.h src/convert/sink.h
 src/pkg/manifest.o: src/window/string.h ../keyargs/keyargs.h

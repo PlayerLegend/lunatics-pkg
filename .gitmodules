@@ -31,3 +31,9 @@
 [submodule "src/lang"]
 	path = src/lang
 	url = ../submodule-lang
+[submodule "src/http"]
+	path = src/http
+	url = ../submodule-http
+[submodule "src/network"]
+	path = src/network
+	url = ../submodule-network
