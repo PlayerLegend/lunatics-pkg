@@ -2,5 +2,5 @@ vgcore.*
 *.o
 core
 Makefile.bak
-/tests/
+/test/
 /bin/
